@@ -1,0 +1,12 @@
+<div class="modal-header">
+    <h4>{{ heading }}</h4>
+</div>
+
+<div class="modal-body">
+    <p [innerHTML]="body"></p>
+</div>
+
+<div class="modal-footer">
+    <button class="btn btn-primary" (click)="goAhead()">OK</button>
+    <button class="btn btn-default" (click)="close()">Cancel</button>
+</div>

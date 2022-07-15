@@ -1,0 +1,22 @@
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    padding-left: 15px;
+}
+
+.btn-default {
+    background-color: lightgrey;
+}
+
+.modal-header,
+.modal-body {
+    font-size: 12px;
+    padding: 15px;
+}
+
+.modal-body {
+    font-style: italic;
+}

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { AddUserComponent } from './add-user/add-user.component';
 import { AddItemComponent } from './add-item/add-item.component';
 import { AdminComponent } from './admin/admin.component';
-import { AdminRoutingModule } from './admin-routing/admin-routing.module';
+import { AdminRoutingModule } from './admin/admin-routing.module';
 import { SharedModuleModule } from '../shared-module/shared-module.module';
 
 
@@ -18,4 +18,5 @@ import { SharedModuleModule } from '../shared-module/shared-module.module';
     AdminRoutingModule
   ]
 })
-export class AdminModule { }
+export class AdminModule { 
+}

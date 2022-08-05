@@ -1,1 +1,11 @@
-<p>manage-book works!</p>
+<h2>Manage Book</h2>
+<ul [ngClass]="'manage-book'">
+    <ng-container *ngIf="books">
+        <li *ngFor="let book of books">
+            Id: {{book.id}}, Name = {{book.name}}
+            <button (click)="updateBook(book.id!)">Update</button>
+            <button (click)="deleteBook(book.id!)">Remove</button>
+        </li>
+    </ng-container>
+
+</ul>

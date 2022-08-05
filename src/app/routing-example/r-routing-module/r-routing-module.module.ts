@@ -23,7 +23,7 @@ const routes: Routes = [
         component: AddBookComponent
       },
       {
-        path: 'view-details/:id',
+        path: 'view-detail/:id',
         component: ViewDetailsComponent
       },
       {
@@ -36,7 +36,7 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: 'manage-book',
+        redirectTo: 'home',
         // pathMatch: 'full'
       },
     

@@ -11,6 +11,8 @@ import { SecondComponent } from './mixins/second/second.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ConfirmationDialogueComponentComponent } from './mixins/confirmation-dialogue-component/confirmation-dialogue-component.component';
+// import { FormsModule } from '@angular/forms';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { ConfirmationDialogueComponentComponent } from './mixins/confirmation-di
     AppRoutingModule,
     SharedModuleModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

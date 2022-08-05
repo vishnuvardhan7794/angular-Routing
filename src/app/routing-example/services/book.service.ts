@@ -14,7 +14,7 @@ export class BookService {
     this.getBooks().then(books => {
       let maxIndex = books.length - 1;
       let bookWithMaxIndex = books[maxIndex];
-      book.id = bookWithMaxIndex.id + 1;
+      book.id = bookWithMaxIndex.id! + 1;
       books.push(book);
     }
     );

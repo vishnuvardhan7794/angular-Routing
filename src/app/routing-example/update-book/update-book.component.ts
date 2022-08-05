@@ -1,4 +1,9 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+import { switchMap } from 'rxjs/operators';
+import { Book } from '../services/book';
+import { BookService } from '../services/book.service';
 
 @Component({
   selector: 'app-update-book',
@@ -7,9 +12,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpdateBookComponent implements OnInit {
 
-  constructor() { }
-
+  book: Book = new Book();
+  constructor(private route: ActivatedRoute,
+    private bookService: BookService,
+    private location: Location) { }
   ngOnInit(): void {
+    this.route.params.pipe(
+      switchMap((params: Params) => this.bookService.getBook(+params['id']))
+    ).subscribe(book => this.book = book!);
+  }
+  goBack(): void {
+    this.location.back();
   }
 
 }

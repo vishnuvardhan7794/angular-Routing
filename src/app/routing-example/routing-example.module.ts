@@ -8,6 +8,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HomeComponent } from './home/home.component';
 import { ViewDetailsComponent } from './view-details/view-details.component';
 import { AddBookComponent } from './add-book/add-book.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -23,7 +24,9 @@ import { AddBookComponent } from './add-book/add-book.component';
   ],
   imports: [
     CommonModule,
-    RRoutingModuleModule
+    RRoutingModuleModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class RoutingExampleModule { }

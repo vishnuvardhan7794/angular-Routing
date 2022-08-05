@@ -9,32 +9,36 @@ import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: WelcomeComponent,
-    children: [
-      {
-        path:'first',
-        component:FirstComponent
-      },
-      {
-        path:'second',
-        component:SecondComponent
-      },
-      {
-        path:'admin',
-        loadChildren:  () => import('./admin/admin.module').then(m => m.AdminModule),
-      }
-    ]
-  },
-  
-  {
-    path: '',
-    component: HomeComponent
+    path: 'routing',
+    loadChildren: () => import('./routing-example/routing-example.module').then((r) => r.RoutingExampleModule),
   }
+  // {
+  //   path: '',
+  //   component: WelcomeComponent,
+  //   children: [
+  //     {
+  //       path:'first',
+  //       component:FirstComponent
+  //     },
+  //     {
+  //       path:'second',
+  //       component:SecondComponent
+  //     },
+  //     {
+  //       path:'admin',
+  //       loadChildren:  () => import('./admin/admin.module').then(m => m.AdminModule),
+  //     }
+  //   ]
+  // },
+
+  // {
+  //   path: '',
+  //   component: HomeComponent
+  // }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
+  imports: [RouterModule.forRoot(routes, { enableTracing: false })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

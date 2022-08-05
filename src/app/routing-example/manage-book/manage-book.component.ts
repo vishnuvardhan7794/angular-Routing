@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Book } from '../services/book';
 import { BookService } from '../services/book.service';
 
@@ -13,7 +13,8 @@ export class ManageBookComponent implements OnInit {
   books: Book[] = [];
   book: Book = new Book();
   constructor(private router: Router,
-    private bookService: BookService) { }
+    private bookService: BookService,
+    public route: ActivatedRoute) { }
   getBooks(): void {
     this.bookService.getBooks().then(books => this.books = books);
   }
@@ -21,7 +22,9 @@ export class ManageBookComponent implements OnInit {
     this.getBooks();
   }
   updateBook(id: number): void {
-    this.router.navigate(['/routing/update-book', id]);
+    this.router.navigate(['../update-book', id], {
+      relativeTo: this.route
+    });
   }
   deleteBook(id: number): void {
     this.bookService.deleteBook(id);
